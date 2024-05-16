@@ -5,6 +5,7 @@ const cloudinary = require("cloudinary").v2;
 
 router.post("/upload", async (req, res) => {
   const resultMove = await req.files.photo.mv(`./tmp/${req.files.photo.name}`);
+  console.log(resultMove);
   const resultCloudinary = await cloudinary.uploader.upload(
     `./tmp/${req.files.photo.name}`
   );
