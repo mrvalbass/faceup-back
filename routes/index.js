@@ -6,9 +6,7 @@ const cloudinary = require("cloudinary").v2;
 
 router.post("/upload", async (req, res) => {
   console.log(req.files);
-  const resultMove = await req.files.photo.mv(
-    `https://faceup-back-gamma.vercel.app/tmp/${req.files.photo.name}`
-  );
+  const resultMove = await req.files.photo.mv(`./tmp/${req.files.photo.name}`);
   // const resultCloudinary = await cloudinary.uploader.upload(
   //   `./tmp/${req.files.photo.name}`
   // );
